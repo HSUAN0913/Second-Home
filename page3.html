@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/5b778b23e2.js" crossorigin="anonymous"></script>
+    <title>GoToBuy</title>
+<style>
+     * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            /* border:1px solid red; */
+            font-family: "Lato", "Noto Sans TC", sans-serif;
+        }
+
+
+        header {
+            /* margin: 0 80px; */
+            /* width: 100%; */
+            height: 90px;
+            /* background-color: #d3d3d3; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 80px;
+            /* border: 2px solid red; */
+        }
+
+        .header_size {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 1200px;
+            /* border: 2px solid blue; */
+        }
+
+        .logo>a {
+            font-size: 30px;
+            font-weight: bolder;
+            width: 100px;
+            word-wrap: break-word;
+            text-decoration: none;
+            color: #000;
+        }
+
+        .icon_bar a,
+        .icon_bar span {
+            color: #000;
+            font-size: 20px;
+            text-decoration: none;
+            /* border: 2px solid red; */
+            margin: 10px;
+        }
+
+        .icon_bar>a:hover,
+        .icon_bar :nth-child(2):hover {
+            color: #ddd;
+            transition: all 0.5s;
+        }
+
+        .icon_bar :nth-child(2) .badge {
+
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            padding: 2px 3px;
+            border-radius: 50%;
+            background-color: red;
+            color: white;
+            font-size: 8px;
+            box-sizing: border-box;
+        }
+
+
+
+
+        /* main {
+            display: flex;
+            justify-content: center;
+            border: 3px solid red;
+            margin: 0 80px;
+        } */
+
+        /* 左右內容 */
+        .container {
+            border-top: 2px solid rgba(211, 211, 211, 00.5);
+            display: flex;
+            justify-content: center;
+            /* border: 3px solid blue; */
+            margin: 0 80px;
+            /* align-items: center; */
+            width: 1200px;
+
+        }
+
+
+        .footer_box {
+            height: 300px;
+            width: auto;
+            background-color: black;
+            padding: 50px;
+            margin: 0 auto;
+            /* border: 3px solid red; */
+
+
+
+        }
+
+        .footer_bar {
+            /* border: 3px solid red; */
+            margin: 0px;
+            height: 100%;
+            padding-top: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+
+
+        }
+
+        .footer_icon {
+            width: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            /* border: 3px solid red; */
+        }
+
+        .footer_icon a {
+            color: #f9f9f9;
+            font-size: 20px;
+
+        }
+
+        
+</style>
+
+
+
+
+
+</head>
+
+<body>
+    <!-- 標題 -->
+    <body>
+        <header>
+            <div class="header_size">
+                <span>
+                    <span class="logo">
+                        <a href="#">
+                            <img src="" alt="">Second Home.
+                        </a>
+                    </span>
+                </span>
+    
+                <!-- 按鈕欄 -->
+                <span class="icon_bar">
+                    <a href="#" class="fas fa-sharp fa-solid fa-heart"></a>
+    
+                    <a href="#" class="fas fa-solid fa-bars"></a>
+                </span>
+            </div>
+        </header>
+
+
+    <!-- 中間過程索引 -->
+    <section>
+        
+        <div class="container">過程圖標
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </section>
+
+    <main>
+
+        <div class="container">
+
+            <!-- 左半邊60% -->
+            <div class="box_left">
+                <table>
+                    <tr>
+                        <td>商圖</td>
+                        <td>名</td>
+                        <td>價格</td>
+                        <td>數量按鍵</td>
+                    </tr>
+                    <tr>
+                        <td>商圖</td>
+                        <td>名</td>
+                        <td>價格</td>
+                        <td>數量按鍵</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- 右半邊40% -->
+            <div class="box_right">
+                結帳小計
+            </div>
+        </div>
+    </ㄩ>
+    <!-- 最近瀏覽 -->
+    <div class="Card_box">
+
+    </div>
+
+    <!-- 頁腳 -->
+    <footer class="footer_box">
+
+        <hr>
+
+        <div class="footer_bar">
+            <div>
+                <span class="logo">
+                    <a href="#" style="text-decoration: none; color: #f6f7f8;">
+                        <img src="" alt="">Second Home.
+                    </a>
+                </span>
+                <span style=" color: #f6f7f8;">&copy; 2024 Company, Inc</span>
+            </div>
+            <span class="footer_icon">
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+
+            </span>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
