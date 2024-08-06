@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/5b778b23e2.js" crossorigin="anonymous"></script>
     <title>GoToBuy</title>
-<style>
-     * {
+    <style>
+        * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
@@ -76,12 +76,22 @@
 
 
 
-        /* main {
+        main {
             display: flex;
             justify-content: center;
             border: 3px solid red;
-            margin: 0 80px;
-        } */
+            /* margin: 0 80px; */
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid red;
+        }
 
         /* 左右內容 */
         .container {
@@ -134,9 +144,7 @@
             font-size: 20px;
 
         }
-
-        
-</style>
+    </style>
 
 
 
@@ -146,6 +154,7 @@
 
 <body>
     <!-- 標題 -->
+
     <body>
         <header>
             <div class="header_size">
@@ -156,86 +165,106 @@
                         </a>
                     </span>
                 </span>
-    
+
                 <!-- 按鈕欄 -->
                 <span class="icon_bar">
                     <a href="#" class="fas fa-sharp fa-solid fa-heart"></a>
-    
+
                     <a href="#" class="fas fa-solid fa-bars"></a>
                 </span>
             </div>
         </header>
 
 
-    <!-- 中間過程索引 -->
-    <section>
-        
-        <div class="container">過程圖標
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </section>
 
-    <main>
 
-        <div class="container">
+        <main>
 
-            <!-- 左半邊60% -->
-            <div class="box_left">
-                <table>
-                    <tr>
-                        <td>商圖</td>
-                        <td>名</td>
-                        <td>價格</td>
-                        <td>數量按鍵</td>
-                    </tr>
-                    <tr>
-                        <td>商圖</td>
-                        <td>名</td>
-                        <td>價格</td>
-                        <td>數量按鍵</td>
-                    </tr>
-                </table>
+            <div class="container" style="border: 2px solid blue;">
+
+                <!-- 左半邊60% -->
+                <div class="box_left">
+                    <!-- 中間過程索引 -->
+                    <div class="index">
+                        <!-- 過程圖標 -->
+                        <span>購物車</span>
+                        <span>結帳方式</span>
+                        <span>結帳確認</span>
+                        <span>完成</span>
+                    </div>
+
+                    <table>
+                        <tr>
+                            <td><img src="https://dummyimage.com/150x150/d3d3d3/fff&text=product" alt=""></td>
+                            <td>product name</td>
+                            <td>price</td>
+                            <td>
+                                <input type="number" name="" id="">
+                                <button>count</button>
+                                <button>cancel</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="https://dummyimage.com/150x150/d3d3d3/fff&text=product" alt=""></td>
+                            <td>product name</td>
+                            <td>price</td>
+                            <td>
+                                <input type="number" name="" id="">
+                                <button>count</button>
+                                <button>cancel</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- 右半邊40% -->
+                <div class="box_right">
+                    <div>
+                        <button>結帳繼續</button>
+                        <p id="total"></p>
+                        <button>繼續購物</button>
+                    </div>
+                </div>
             </div>
+        </main>
+        <!-- 最近瀏覽 -->
+        <section class="container_2" style="border: 2px solid red;">
+            <div class="column" style="border: 2px solid blue;margin: 0px 80px;">
+                <h4>最近瀏覽</h4>
+                <div class="Card_box">
 
-            <!-- 右半邊40% -->
-            <div class="box_right">
-                結帳小計
+                    <img src="https://dummyimage.com/150x150/d3d3d3/fff&text=product" alt="">
+                    <img src="https://dummyimage.com/150x150/d3d3d3/fff&text=product" alt="">
+                </div>
+
             </div>
-        </div>
-    </ㄩ>
-    <!-- 最近瀏覽 -->
-    <div class="Card_box">
+        </section>
 
-    </div>
+        <!-- 頁腳 -->
+        <footer class="footer_box">
 
-    <!-- 頁腳 -->
-    <footer class="footer_box">
+            <hr>
 
-        <hr>
+            <div class="footer_bar">
+                <div>
+                    <span class="logo">
+                        <a href="#" style="text-decoration: none; color: #f6f7f8;">
+                            <img src="" alt="">Second Home.
+                        </a>
+                    </span>
+                    <span style=" color: #f6f7f8;">&copy; 2024 Company, Inc</span>
+                </div>
+                <span class="footer_icon">
+                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
 
-        <div class="footer_bar">
-            <div>
-                <span class="logo">
-                    <a href="#" style="text-decoration: none; color: #f6f7f8;">
-                        <img src="" alt="">Second Home.
-                    </a>
                 </span>
-                <span style=" color: #f6f7f8;">&copy; 2024 Company, Inc</span>
+
             </div>
-            <span class="footer_icon">
-                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#"><i class="fa-brands fa-facebook"></i></a>
 
-            </span>
+        </footer>
 
-        </div>
-
-    </footer>
-
-</body>
+    </body>
 
 </html>
