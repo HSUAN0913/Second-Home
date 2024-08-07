@@ -161,6 +161,7 @@ background-color: aqua;
             border-radius: 20px;
             cursor: pointer;
         }
+
         .box>button:hover {
             background-color: #bd3030;
         }
@@ -169,6 +170,7 @@ background-color: aqua;
             font-weight: bold;
             margin-top: 20px;
         }
+
         .box>a {
             color: #000;
         }
@@ -244,16 +246,21 @@ background-color: aqua;
             color: white;
 
         }
+
         .btn_bar>a {
- color: #000;
+            color: #000;
 
         }
-        #noItemsMessage {
-            display: none;
-            color: red;
-            font-size: 1.5em;
-            margin-top: 20px;
 
+        #noItemsMessage {
+            /* background-color: aqua; */
+            display: none;
+            color: #000;
+            font-size: 20px;
+            margin-top: 50px;
+            text-align: center;
+            /* position: absolute; */
+            /* top: 50%; */
 
 
         }
@@ -360,9 +367,10 @@ background-color: aqua;
 
             <div class="container">
 
+
                 <!-- 左半邊60% -->
                 <div class="box_left">
-
+                    <h4 id="noItemsMessage">您的購物車目前沒有商品</h4>
 
                     <table id="cartTable">
                         <tr data-id="1">
@@ -371,7 +379,7 @@ background-color: aqua;
                             <td class="prodPrice">1980</td>
                             <td>
                                 <div class="btn_bar">
-                                    <input type="number" name="" id="" value="1"  class="num">
+                                    <input type="number" name="" id="" value="1" min="0" class="num">
                                     <button class="countBtn" onclick="getTotal()">count</button>
                                     <button class="deleteBtn" onclick="deleteRow(this)">cancel</button>
                                 </div>
@@ -383,7 +391,7 @@ background-color: aqua;
                             <td class="prodPrice">900</td>
                             <td>
                                 <div class="btn_bar">
-                                    <input type="number" name="" class="num" value="1" >
+                                    <input type="number" name="" class="num" min="0" value="1">
                                     <button class="countBtn" onclick="getTotal()">count</button>
                                     <button class="deleteBtn" onclick="deleteRow(this)">cancel</button>
                                 </div>
@@ -405,7 +413,7 @@ background-color: aqua;
                     </div>
                 </div>
             </div>
-            <h4 id="noItemsMessage">您的購物車目前沒有商品</h4>
+
         </main>
         <!-- 最近瀏覽 -->
         <main style="background-color: #f6f7f8; margin: 50px 50px 0px 50px auto;">
@@ -446,53 +454,49 @@ background-color: aqua;
         </footer>
 
         <script>
-           
-        function getTotal(){
 
-            var prices = document.querySelectorAll('.prodPrice');
-            var quantities = document.querySelectorAll('.num');
-            var grandTotal = 0;
 
-            // 遍歷每一行，計算總額
-            prices.forEach((price, index) => {
-                var priceValue = parseInt(price.innerText);
-                var quantityValue = parseInt(quantities[index].value);
-                grandTotal += priceValue * quantityValue;
-            });
 
-            // 更新總額欄位
-            document.getElementById('grandTotal').textContent = '總額：' + grandTotal;
+            window.addEventListener('load', getTotal);
 
-             // 檢查是否有商品，更新顯示狀態
-            var cartTable = document.getElementById('cartTable');
-            var noItemsMessage = document.getElementById('noItemsMessage');
-            if (cartTable.rows.length <= 1) { // 檢查表格行數，第一行是標題行
-                document.getElementById('shoppingCart').style.display = 'none';
-                noItemsMessage.style.display = 'block';
-            } else {
-                document.getElementById('shoppingCart').style.display = 'block';
-                noItemsMessage.style.display = 'none';
+            function getTotal() {
+                const num = document.querySelectorAll(".num");
+                const price = document.querySelectorAll(".prodPrice");
+                let sum = 0;
+                for (let i = 0; i < price.length; i++) {
+                    sum += price[i].textContent * num[i].value;
+                }
+
+                // 更新總額欄位
+                document.getElementById('grandTotal').innerText = '總額：' + sum;
+
+                // 檢查購物車是否為空
+                const noItemsMessage = document.getElementById("noItemsMessage");
+                const cartTable = document.getElementById("cartTable");
+                if (cartTable.rows.length <= 0) {  // 包含表頭行，空購物車情況
+                    noItemsMessage.style.display = "block";
+                    document.getElementById('grandTotal').innerText = ""
+                } else {
+                    noItemsMessage.style.display = "none";
+                }
             }
 
-           
-            
-        }
+            function deleteRow(btn) {
+                const row = btn.closest("tr");
+                row.remove();
+                getTotal();
+            }
 
-        
+            function checkQuantity(input) {
+                if (input.value < 0) {
+                    input.value = 0;
+                }
+                getTotal();
+            }
 
-            function deleteRow(button) {
-            // 找到包含該按鈕的行
-            var row = button.closest('tr');
-            // 刪除該行
-            row.remove();
-            // 重新計算總額
-            getTotal();
-        }
-        
 
-    
-             
-        
+
+
         </script>
 
     </body>
