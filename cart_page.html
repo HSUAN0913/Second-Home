@@ -73,39 +73,206 @@
             box-sizing: border-box;
         }
 
+        /* section{
+            display: flex;
+            justify-content: center;
+            width:1000px;
+background-color: aqua;
+        } */
+
+        /* 最近瀏覽 */
+        .index {
+            /* background-color: aqua; */
+            width: 600px;
+            height: 50px;
+            /* border-top: 2px solid rgba(211, 211, 211, 0.5); */
+
+            display: flex;
+            /* justify-content: space-around; */
+            /* align-items: center; */
+        }
+
+        .index :nth-child(1) {
+            clip-path: polygon(85% 0%, 100% 50%, 85% 100%, 0% 100%, 0 50%, 0% 0%);
+            background-color: #000;
+            color: #f9f9f9;
+        }
+
+
+        .index span {
+
+            display: block;
+            margin: 0px auto;
+            padding: 15px 40px;
+
+        }
 
 
 
         main {
             display: flex;
             justify-content: center;
-            border: 3px solid red;
+            /* border: 3px solid red; */
             /* margin: 0 80px; */
         }
 
-        table {
-            border-collapse: collapse;
-        }
-
-        table,
-        th,
-        td {
-            border: 1px solid red;
-        }
 
         /* 左右內容 */
         .container {
-            border-top: 2px solid rgba(211, 211, 211, 00.5);
+            /* border-top: 2px solid rgba(211, 211, 211, 00.5); */
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             /* border: 3px solid blue; */
-            margin: 0 80px;
+            margin: 50px 80px;
             /* align-items: center; */
             width: 1200px;
+            /* border: 2px solid blue; */
+        }
+
+        .box_left {
+            flex: 70%;
+            margin-right: 80px;
+        }
+
+        .box_right {
+            flex: 30%;
+            background-color: #f9f9f9;
+            padding: 20px;
+            /* border:2px solid rgba(211, 211, 211, 0.5); */
+
+        }
+
+        .box {
+            display: flex;
+            flex-direction: column;
+            /* justify-content: space-between; */
+            align-items: center;
+            /* background-color: aqua; */
+            position: relative;
+            height: 100%;
+        }
+
+        .box>button {
+            width: 150px;
+            height: 50px;
+            font-size: 18px;
+            background-color: #000;
+            color: white;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        .box>button:hover {
+            background-color: #bd3030;
+        }
+
+        .box>p {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .box>a {
+            color: #000;
+        }
+
+
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        tr,
+        td {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            padding: 10px;
+            height: 200px;
 
         }
 
 
+        table tr:nth-child(1) {
+            border-bottom: 3px solid rgba(211, 211, 211, 0.5);
+        }
+
+        td:nth-child(1) {
+            width: 30%;
+        }
+
+        td:nth-child(2) {
+            width: 60%;
+        }
+
+        td:nth-child(3) {
+            width: 20%;
+        }
+
+        td:nth-child(4) {
+
+            display: flex;
+            justify-content: center;
+            align-items: start;
+        }
+
+        .btn_bar {
+            /* border: 1px solid red; */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 60%;
+            height: 80%;
+            text-align: center;
+        }
+
+        input {
+            text-align: center;
+            height: 30px;
+        }
+
+        .btn_bar button {
+            border: none;
+            border-radius: 20px;
+            width: 100%;
+            height: 30px;
+            margin: 8px auto;
+            cursor: pointer;
+
+        }
+
+        .btn_bar button:hover {
+            background-color: #000;
+            color: white;
+
+        }
+        .btn_bar>a {
+ color: #000;
+
+        }
+        #noItemsMessage {
+            display: none;
+            color: red;
+            font-size: 1.5em;
+            margin-top: 20px;
+
+
+
+        }
+
+        .container_column {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            /* border: 2px solid blue; */
+            padding: 50px auto;
+            margin: 0px 80px;
+            width: 1200px;
+            height: 300px;
+
+
+        }
+
+        /* 頁腳 */
         .footer_box {
             height: 300px;
             width: auto;
@@ -160,7 +327,7 @@
             <div class="header_size">
                 <span>
                     <span class="logo">
-                        <a href="#">
+                        <a href="homepage.html">
                             <img src="" alt="">Second Home.
                         </a>
                     </span>
@@ -174,44 +341,52 @@
                 </span>
             </div>
         </header>
-
-
-
-
         <main>
+            <!-- 中間過程索引 -->
+            <div class="index">
+                <!-- 過程圖標 -->
+                <span>購物車</span>
+                <span>結帳方式</span>
+                <span>結帳確認</span>
+                <span>完成</span>
+            </div>
 
-            <div class="container" style="border: 2px solid blue;">
+        </main>
+
+
+
+
+        <main id="shoppingCart">
+
+            <div class="container">
 
                 <!-- 左半邊60% -->
                 <div class="box_left">
-                    <!-- 中間過程索引 -->
-                    <div class="index">
-                        <!-- 過程圖標 -->
-                        <span>購物車</span>
-                        <span>結帳方式</span>
-                        <span>結帳確認</span>
-                        <span>完成</span>
-                    </div>
 
-                    <table>
-                        <tr>
+
+                    <table id="cartTable">
+                        <tr data-id="1">
                             <td><img src="https://dummyimage.com/150x150/d3d3d3/fff&text=product" alt=""></td>
                             <td>product name</td>
-                            <td>price</td>
+                            <td class="prodPrice">1980</td>
                             <td>
-                                <input type="number" name="" id="">
-                                <button>count</button>
-                                <button>cancel</button>
+                                <div class="btn_bar">
+                                    <input type="number" name="" id="" value="1"  class="num">
+                                    <button class="countBtn" onclick="getTotal()">count</button>
+                                    <button class="deleteBtn" onclick="deleteRow(this)">cancel</button>
+                                </div>
                             </td>
                         </tr>
-                        <tr>
+                        <tr data-id="2">
                             <td><img src="https://dummyimage.com/150x150/d3d3d3/fff&text=product" alt=""></td>
                             <td>product name</td>
-                            <td>price</td>
+                            <td class="prodPrice">900</td>
                             <td>
-                                <input type="number" name="" id="">
-                                <button>count</button>
-                                <button>cancel</button>
+                                <div class="btn_bar">
+                                    <input type="number" name="" class="num" value="1" >
+                                    <button class="countBtn" onclick="getTotal()">count</button>
+                                    <button class="deleteBtn" onclick="deleteRow(this)">cancel</button>
+                                </div>
                             </td>
                         </tr>
                     </table>
@@ -219,26 +394,31 @@
 
                 <!-- 右半邊40% -->
                 <div class="box_right">
-                    <div>
+                    <div class="box">
                         <button>結帳繼續</button>
-                        <p id="total"></p>
-                        <button>繼續購物</button>
+                        <p></p>
+                        <p id="grandTotal"></p>
+
+
+                        <a href="homepage.html" style="position:absolute;bottom: 5%;">繼續購物 >></a>
+
                     </div>
                 </div>
             </div>
+            <h4 id="noItemsMessage">您的購物車目前沒有商品</h4>
         </main>
         <!-- 最近瀏覽 -->
-        <section class="container_2" style="border: 2px solid red;">
-            <div class="column" style="border: 2px solid blue;margin: 0px 80px;">
+        <main style="background-color: #f6f7f8; margin: 50px 50px 0px 50px auto;">
+            <div class="container_column">
                 <h4>最近瀏覽</h4>
-                <div class="Card_box">
+                <div class="Card_box" style="padding: 20px 0px;">
 
                     <img src="https://dummyimage.com/150x150/d3d3d3/fff&text=product" alt="">
                     <img src="https://dummyimage.com/150x150/d3d3d3/fff&text=product" alt="">
                 </div>
 
             </div>
-        </section>
+        </main>
 
         <!-- 頁腳 -->
         <footer class="footer_box">
@@ -249,7 +429,7 @@
                 <div>
                     <span class="logo">
                         <a href="#" style="text-decoration: none; color: #f6f7f8;">
-                            <img src="" alt="">Second Home.
+                            Second Home.
                         </a>
                     </span>
                     <span style=" color: #f6f7f8;">&copy; 2024 Company, Inc</span>
@@ -264,6 +444,56 @@
             </div>
 
         </footer>
+
+        <script>
+           
+        function getTotal(){
+
+            var prices = document.querySelectorAll('.prodPrice');
+            var quantities = document.querySelectorAll('.num');
+            var grandTotal = 0;
+
+            // 遍歷每一行，計算總額
+            prices.forEach((price, index) => {
+                var priceValue = parseInt(price.innerText);
+                var quantityValue = parseInt(quantities[index].value);
+                grandTotal += priceValue * quantityValue;
+            });
+
+            // 更新總額欄位
+            document.getElementById('grandTotal').textContent = '總額：' + grandTotal;
+
+             // 檢查是否有商品，更新顯示狀態
+            var cartTable = document.getElementById('cartTable');
+            var noItemsMessage = document.getElementById('noItemsMessage');
+            if (cartTable.rows.length <= 1) { // 檢查表格行數，第一行是標題行
+                document.getElementById('shoppingCart').style.display = 'none';
+                noItemsMessage.style.display = 'block';
+            } else {
+                document.getElementById('shoppingCart').style.display = 'block';
+                noItemsMessage.style.display = 'none';
+            }
+
+           
+            
+        }
+
+        
+
+            function deleteRow(button) {
+            // 找到包含該按鈕的行
+            var row = button.closest('tr');
+            // 刪除該行
+            row.remove();
+            // 重新計算總額
+            getTotal();
+        }
+        
+
+    
+             
+        
+        </script>
 
     </body>
 
