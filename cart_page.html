@@ -82,20 +82,22 @@ background-color: aqua;
 
         /* 最近瀏覽 */
         .index {
-            /* background-color: aqua; */
-            width: 600px;
+            background-color: #f9f9f9;
+            width: 1200px;
             height: 50px;
             /* border-top: 2px solid rgba(211, 211, 211, 0.5); */
-
+            
             display: flex;
-            /* justify-content: space-around; */
+            justify-content: space-evenly;
             /* align-items: center; */
         }
 
         .index :nth-child(1) {
-            clip-path: polygon(85% 0%, 100% 50%, 85% 100%, 0% 100%, 0 50%, 0% 0%);
+            clip-path: polygon(85% 0%, 100% 50%, 85% 100%, 0% 100%, 0% 50%, 0% 0%);
             background-color: #000;
             color: #f9f9f9;
+            /* width: 100%; */
+            
         }
 
 
@@ -103,8 +105,9 @@ background-color: aqua;
 
             display: block;
             margin: 0px auto;
-            padding: 15px 40px;
-
+            padding: 15px 20px;
+             width: 100%;
+             text-align: center;
         }
 
 
@@ -153,13 +156,14 @@ background-color: aqua;
         }
 
         .box>button {
-            width: 150px;
+            width: 300px;
             height: 50px;
             font-size: 18px;
             background-color: #000;
             color: white;
-            border-radius: 20px;
+            border-radius: 25px;
             cursor: pointer;
+            padding: 5px 20px;
         }
 
         .box>button:hover {
@@ -187,7 +191,8 @@ background-color: aqua;
             display: flex;
             justify-content: space-between;
             align-items: start;
-            padding: 10px;
+            /* padding: 10px; */
+            margin: 15px;
             height: 200px;
 
         }
@@ -352,10 +357,10 @@ background-color: aqua;
             <!-- 中間過程索引 -->
             <div class="index">
                 <!-- 過程圖標 -->
-                <span>購物車</span>
-                <span>結帳方式</span>
-                <span>結帳確認</span>
-                <span>完成</span>
+                <span>Shopping Cart</span>
+                <span>Payment Method</span>
+                <span>Order Confirmation</span>
+                <span>Complete</span>
             </div>
 
         </main>
@@ -370,7 +375,7 @@ background-color: aqua;
 
                 <!-- 左半邊60% -->
                 <div class="box_left">
-                    <h4 id="noItemsMessage">您的購物車目前沒有商品</h4>
+                    <h4 id="noItemsMessage">Your cart is empty.</h4>
 
                     <table id="cartTable">
                         <tr data-id="1">
@@ -379,9 +384,10 @@ background-color: aqua;
                             <td class="prodPrice">1980</td>
                             <td>
                                 <div class="btn_bar">
-                                    <input type="number" name="" id="" value="1" min="0" class="num">
-                                    <button class="countBtn" onclick="getTotal()">count</button>
-                                    <button class="deleteBtn" onclick="deleteRow(this)">cancel</button>
+                                    <input type="number" name="" id="" value="1" min="0" class="num" onclick="getTotal()" oninput="checkQuantity(this)">
+                                    <!-- <button class="countBtn" onclick="getTotal()">count</button> -->
+                                    <button>Save for later</button>
+                                    <button class="deleteBtn" onclick="deleteRow(this)">Remove</button>
                                 </div>
                             </td>
                         </tr>
@@ -391,9 +397,10 @@ background-color: aqua;
                             <td class="prodPrice">900</td>
                             <td>
                                 <div class="btn_bar">
-                                    <input type="number" name="" class="num" min="0" value="1">
-                                    <button class="countBtn" onclick="getTotal()">count</button>
-                                    <button class="deleteBtn" onclick="deleteRow(this)">cancel</button>
+                                    <input type="number" name="" class="num" min="0" value="1" onclick="getTotal()" oninput="checkQuantity(this)" >
+                                    <!-- <button class="countBtn" onclick="getTotal()">count</button> -->
+                                    <button>Save for later</button>
+                                    <button class="deleteBtn" onclick="deleteRow(this)">Remove</button>
                                 </div>
                             </td>
                         </tr>
@@ -403,12 +410,12 @@ background-color: aqua;
                 <!-- 右半邊40% -->
                 <div class="box_right">
                     <div class="box">
-                        <button>結帳繼續</button>
+                        <button>Proceed To Checkout</button>
                         <p></p>
                         <p id="grandTotal"></p>
 
 
-                        <a href="homepage.html" style="position:absolute;bottom: 5%;">繼續購物 >></a>
+                        <a href="homepage.html" style="position:absolute;bottom: 5%;">Continue Shopping >></a>
 
                     </div>
                 </div>
@@ -418,7 +425,7 @@ background-color: aqua;
         <!-- 最近瀏覽 -->
         <main style="background-color: #f6f7f8; margin: 50px 50px 0px 50px auto;">
             <div class="container_column">
-                <h4>最近瀏覽</h4>
+                <h2>Recently Viewed</h2>
                 <div class="Card_box" style="padding: 20px 0px;">
 
                     <img src="https://dummyimage.com/150x150/d3d3d3/fff&text=product" alt="">
@@ -468,12 +475,14 @@ background-color: aqua;
                 }
 
                 // 更新總額欄位
-                document.getElementById('grandTotal').innerText = '總額：' + sum;
+                document.getElementById('grandTotal').innerText = 'Total：NT$ ' + sum;
 
                 // 檢查購物車是否為空
                 const noItemsMessage = document.getElementById("noItemsMessage");
                 const cartTable = document.getElementById("cartTable");
-                if (cartTable.rows.length <= 0) {  // 包含表頭行，空購物車情況
+                if (cartTable.rows.length <= 0) {  
+
+                    // 包含表頭行，空購物車情況
                     noItemsMessage.style.display = "block";
                     document.getElementById('grandTotal').innerText = ""
                 } else {
@@ -487,16 +496,17 @@ background-color: aqua;
                 getTotal();
             }
 
+
             function checkQuantity(input) {
-                if (input.value < 0) {
-                    input.value = 0;
-                }
-                getTotal();
-            }
-
-
-
-
+    if (input.value < 0) {
+        input.value = 0; // 防止負值
+    }
+    if (input.value == 0) {
+        const row = input.closest("tr");
+        row.remove();
+    }
+    getTotal();
+}
         </script>
 
     </body>
