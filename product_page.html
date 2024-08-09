@@ -248,7 +248,97 @@
             /* margin: 0 80px; */
         }
 
-        /* 左右內容 */
+        /* 寫給響應式圖片的區域 */
+        .img_for_rwd {
+            width: 400px;
+            height: 400px;
+            display: none;
+            position: relative;
+            margin: auto;
+
+        }
+
+        .Slide>img{
+            width: 400px;
+        }
+
+        /* Next & previous buttons */
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+
+        /* The dots/bullets/indicators */
+        .dot {
+            cursor: pointer;
+            height: 10px;
+            width: 10px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active,
+        .dot:hover {
+            background-color: #717171;
+        }
+
+        /* Fading animation */
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        /* On smaller screens, decrease text size */
+        @media only screen and (max-width: 300px) {
+
+            .prev,
+            .next,
+            .text {
+                font-size: 11px
+            }
+        }
+
+        /* --------------這裡為止----------------- */
+
+
+        /* 主要整體內容 */
         .container {
             border-top: 2px solid rgba(211, 211, 211, 00.5);
             display: flex;
@@ -336,7 +426,7 @@
         }
 
         .buy_btn :nth-child(1) {
-            width: 10%;
+            width: 100%;
             background-color: #f0f0f0;
             border: none;
             cursor: pointer;
@@ -361,6 +451,21 @@
             background-color: #ddd;
             transition: all 0.5s;
         }
+
+        /* 左商品圖 */
+        .imgGroup {
+            width: 300px;
+        }
+
+        .descr_box {
+            width: 600px;
+        }
+
+        .descr_box>p {
+
+            line-height: 35px;
+        }
+
 
         h4 {
             /* border: 2px solid red; */
@@ -460,6 +565,10 @@
             cursor: pointer;
         }
 
+        .card>img {
+            width: 200px;
+        }
+
 
         .name_price {
             /* width: 100%; */
@@ -530,6 +639,142 @@
 
         }
 
+
+
+
+
+        /* 響應式 */
+
+        /* 螢幕大於1440px */
+        /* @media screen and (min-width:1440px) {} */
+
+        /* 螢幕1440px~1000px */
+        /* @media screen and (min-width:1000px) and (max-width:1440px) {} */
+
+        /* 螢幕1000px~700px */
+        @media screen and (min-width:850px) and (max-width:1000px) {
+            .single-search {
+                width: 120px;
+            }
+
+            .custom-input {
+                width: 80px;
+            }
+
+            .imgGroup {
+                width: 250px;
+            }
+
+            .card_box>.card {
+                display: block;
+            }
+
+            .descr_box,
+            .card_box,
+            .detail_box,
+            h4 {
+                width: 500px;
+            }
+
+            .buy_btn button {
+                font-size: 15px;
+                padding: 5px 20px;
+            }
+
+
+            h2 {
+                font-size: 22px;
+            }
+
+        }
+
+        /* 螢幕700px以下 */
+        @media screen and (max-width:850px) {
+
+            .icon_bar a:nth-child(-n+2) {
+                display: none;
+            }
+
+            .single-search,
+            .index,
+            table {
+                display: none;
+            }
+
+            .container {
+                /* display: table-column; */
+                flex-direction: column-reverse;
+                width: 100%;
+                align-items: center;
+            }
+
+            .img_for_rwd {
+                margin: 30px auto;
+                display: block;
+                order: 1;
+            }
+
+            .img_for_rwd>img {
+                width: 400px;
+            }
+
+
+            .box_right {
+                position: static;
+                width: 400px;
+
+
+            }
+
+            h2 {
+                font-size:22px;
+            }
+
+            .box_left {
+                padding: 0;
+            }
+
+            .imgGroup {
+                width: 100%;
+            }
+
+            .card_box {
+                flex-direction: column;
+                width: 400px;
+            }
+
+            .card>img {
+                width: 400px;
+            }
+
+            /* .card_box>.card {
+                display: block;
+            } */
+
+            .descr_box,
+            .detail_box,
+            h4 {
+                margin: 0 auto;
+                width: 400px;
+            }
+
+            .swiper {
+                display: none;
+            }
+
+            .footer_bar {
+
+                flex-direction: column-reverse;
+                text-align: center;
+                /* padding: 250px 5px 0px 5px; */
+            }
+
+
+
+        }
+
+
+        /* 套件 */
         .swiper {
 
             width: 1200px;
@@ -600,6 +845,31 @@
 
     <main>
         <section class="container">
+
+            <!-- 寫給響應式的圖片容器 -->
+            <div class="img_for_rwd">
+                <div class="Slide fade">
+                    <img src="https://restoredfurniture.co.uk/cdn/shop/files/ERX006a.jpg?v=1721213003&width=990" alt="">
+                </div>
+                <div class="Slide fade">
+                    <img src="https://restoredfurniture.co.uk/cdn/shop/files/ERX006d.jpg?v=1721213003&width=990" alt="">
+                </div>
+                <div class="Slide fade">
+                    <img src="https://restoredfurniture.co.uk/cdn/shop/files/ERX006f.jpg?v=1721213003&width=990" alt="">
+                </div>
+                <!-- Next and previous buttons -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                <br>
+
+                <div style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+
+            </div>
+
             <div class="box_left">
                 <div class="index">
 
@@ -614,9 +884,9 @@
                     <tr>
                         <!-- <td><img src="https://dummyimage.com/300x300/d3d3d3/fff&text=product" alt=""></td> -->
                         <td><img src="https://restoredfurniture.co.uk/cdn/shop/files/ERX006a.jpg?v=1721213003&width=990"
-                                alt="" style="width: 300px;" class="imgGroup"></td>
+                                alt="" class="imgGroup"></td>
 
-
+                        <!-- 彈出視窗大圖的窗 -->
                         <div id="myModal" class="modal">
 
                             <!-- 關閉 -->
@@ -627,111 +897,110 @@
                         </div>
 
                         <td><img src="https://restoredfurniture.co.uk/cdn/shop/files/ERX006d.jpg?v=1721213003&width=990"
-                                alt="" style="width: 300px;" class="imgGroup"></td>
+                                alt="" class="imgGroup"></td>
                     </tr>
                     <tr>
                         <td><img src="https://restoredfurniture.co.uk/cdn/shop/files/ERX006f.jpg?v=1721213003&width=990"
-                                alt="" style="width: 300px;" class="imgGroup"></td>
+                                alt="" class="imgGroup"></td>
                         <td><img src="https://restoredfurniture.co.uk/cdn/shop/files/ERX006j.jpg?v=1721213003&width=990"
-                                alt="" style="width: 300px;" class="imgGroup"></td>
+                                alt="" class="imgGroup"></td>
                     </tr>
                 </table>
 
+                <div class="descr_box">
+                    <h4>Item description</h4>
+                    <p>
+                        This attractive Ercol Table and Chairs are an iconic and major addition, adding timeless style
+                        to
+                        any
+                        dining room or kitchen diner. This seminal design showcases the infamous attention to detail and
+                        build
+                        quality of the British furniture makers.
+                        <br>
+                        <br>
+                        The tabletop and chair seats display a beautiful elm grain and comfortably accommodate four
+                        chairs
+                        when
+                        both sides are extended. It can also be used as a table and three chairs against a wall for
+                        small
+                        families and space-saving when one of the leaves is dropped. This can also be used as a table
+                        and
+                        two
+                        when the leaves are both folded down making this set ultra-functional. We have put this set
+                        together
+                        by
+                        introducing four Ercol All-Purpose chairs to the design of an incredibly efficient drop-leaf
+                        table.
+                        The
+                        dining suite brings a timeless fashion statement that remains incredibly desirable today.
+                        <br>
+                        <br>
+                        We have stripped this beautiful set by hand before applying a coat of clear lacquer which will
+                        protect
+                        the wood for many years to come but also accentuate the beautiful wood grain.
 
-                <h4>Item description</h4>
-                <p style="width: 600px; line-height: 35px;">
-                    This attractive Ercol Table and Chairs are an iconic and major addition, adding timeless style to
-                    any
-                    dining room or kitchen diner. This seminal design showcases the infamous attention to detail and
-                    build
-                    quality of the British furniture makers.
-                    <br>
-                    <br>
-                    The tabletop and chair seats display a beautiful elm grain and comfortably accommodate four chairs
-                    when
-                    both sides are extended. It can also be used as a table and three chairs against a wall for small
-                    families and space-saving when one of the leaves is dropped. This can also be used as a table and
-                    two
-                    when the leaves are both folded down making this set ultra-functional. We have put this set together
-                    by
-                    introducing four Ercol All-Purpose chairs to the design of an incredibly efficient drop-leaf table.
-                    The
-                    dining suite brings a timeless fashion statement that remains incredibly desirable today.
-                    <br>
-                    <br>
-                    We have stripped this beautiful set by hand before applying a coat of clear lacquer which will
-                    protect
-                    the wood for many years to come but also accentuate the beautiful wood grain.
+                        Full of charm and character and completely versatile in use or size, this set is sure to be a
+                        talking
+                        point and a great centrepiece in any kitchen or dining area.
+                    </p>
 
-                    Full of charm and character and completely versatile in use or size, this set is sure to be a
-                    talking
-                    point and a great centrepiece in any kitchen or dining area.
-                </p>
-
-                <h4>Item details</h4>
-                <div class="detail_box">
-                    <button class="accordion">
-                        <i class="fas fa-thin fa-ruler"></i>
-                        &nbsp;Dimensions
-                    </button>
-                    <div class="panel">
-                        <p>Product SKU: ERX006</p>
-                    </div>
-                    <button class="accordion">
-                        <i class="fas fa-light fa-location-dot"></i>
-                        &nbsp;Viewing & Collection
-                        Location
-                    </button>
-                    <div class="panel">
-                        <p>Product SKU: ERX006</p>
-                    </div>
-                    <button class="accordion">
-                        <i class="fas fa-light fa-truck-fast"></i>
-                        &nbsp;Shipping Cost
-                    </button>
-                    <div class="panel">
-                        <p>FAST DELIVERY I work with FEDEX and it takes 3-4 business days for your order to be
-                            delivered. I
-                            will send you your tracking information after your order is shipped.</p>
-                    </div>
-                </div>
-
-                <h4 style="border: none;">Recommend item</h4>
-
-                <div class="card_box">
-                    <div class="card">
-                        <img src="./img/3.jpg" alt="" style="width: 200px;">
-                        <div class="name_price">
-                            <h5 class="item_name">Hand Made Solid Oak Library Steps</h5>
-                            <p class="item_price">NT 1800</p>
-
+                    <h4>Item details</h4>
+                    <div class="detail_box">
+                        <button class="accordion">
+                            <i class="fas fa-thin fa-ruler"></i>
+                            &nbsp;Dimensions
+                        </button>
+                        <div class="panel">
+                            <p>Product SKU: ERX006</p>
+                        </div>
+                        <button class="accordion">
+                            <i class="fas fa-light fa-location-dot"></i>
+                            &nbsp;Viewing & Collection
+                            Location
+                        </button>
+                        <div class="panel">
+                            <p>Product SKU: ERX006</p>
+                        </div>
+                        <button class="accordion">
+                            <i class="fas fa-light fa-truck-fast"></i>
+                            &nbsp;Shipping Cost
+                        </button>
+                        <div class="panel">
+                            <p>FAST DELIVERY I work with FEDEX and it takes 3-4 business days for your order to be
+                                delivered. I
+                                will send you your tracking information after your order is shipped.</p>
                         </div>
                     </div>
-                    <div class="card">
-                        <img src="./img/4.jpg" alt="" style="width: 200px;">
-                        <div class="name_price">
-                            <h5 class="item_name">Restored Oak Bookcase</h5>
-                            <p class="item_price">NT 1980</p>
 
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="./img/7.jpg" alt="" style="width: 200px;">
-                        <div class="name_price">
-                            <h5 class="item_name">Glazed Oak Bookcase</h5>
-                            <p class="item_price">NT 1580</p>
+                    <h4 style="border: none;">Recommend item</h4>
 
+                    <div class="card_box">
+                        <div class="card">
+                            <img src="./img/3.jpg" alt="">
+                            <div class="name_price">
+                                <h5 class="item_name">Hand Made Solid Oak Library Steps</h5>
+                                <p class="item_price">NT 1800</p>
+
+                            </div>
                         </div>
+                        <div class="card">
+                            <img src="./img/4.jpg" alt="">
+                            <div class="name_price">
+                                <h5 class="item_name">Restored Oak Bookcase</h5>
+                                <p class="item_price">NT 1980</p>
+
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="./img/7.jpg" alt="">
+                            <div class="name_price">
+                                <h5 class="item_name">Glazed Oak Bookcase</h5>
+                                <p class="item_price">NT 1580</p>
+
+                            </div>
+                        </div>
+
                     </div>
-                    <!-- <div class="card">
-                    <img src="https://dummyimage.com/200x200/d3d3d3/fff&text=product" alt="">
-                </div>
-                <div class="card">
-                    <img src="https://dummyimage.com/200x200/d3d3d3/fff&text=product" alt="">
-                </div>
-                <div class="card">
-                    <img src="https://dummyimage.com/200x200/d3d3d3/fff&text=product" alt="">
-                </div> -->
                 </div>
 
             </div>
@@ -792,7 +1061,7 @@
 
     <section class="container_2 ">
         <div class="column swiper">
-            <h4 style="border: none;">Recommend item</h4>
+            <h4 style="border: none;">You may also like</h4>
             <div class="card_box_2 swiper-wrapper">
 
                 <div class="card swiper-slide">
@@ -964,6 +1233,34 @@
             return direction;
         }
 
+
+        // 響應式的圖片slide
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("Slide");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
 
 
     </script>

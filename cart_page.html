@@ -86,7 +86,7 @@ background-color: aqua;
             width: 1200px;
             height: 50px;
             /* border-top: 2px solid rgba(211, 211, 211, 0.5); */
-            
+
             display: flex;
             justify-content: space-evenly;
             /* align-items: center; */
@@ -98,7 +98,7 @@ background-color: aqua;
             background-color: #000;
             color: #f9f9f9;
             /* width: 100%; */
-            
+
         }
 
 
@@ -107,8 +107,8 @@ background-color: aqua;
             display: block;
             margin: 0px auto;
             padding: 15px 20px;
-             width: 100%;
-             text-align: center;
+            width: 100%;
+            text-align: center;
         }
 
 
@@ -193,7 +193,7 @@ background-color: aqua;
             justify-content: space-between;
             align-items: start;
             /* padding: 10px; */
-            margin: 15px 15px 15px 0px ;
+            margin: 15px 15px 15px 0px;
             height: 200px;
             font-weight: bold;
 
@@ -271,6 +271,10 @@ background-color: aqua;
 
 
         }
+        .Recently{
+            background-color: #f6f7f8; 
+            margin: 50px 50px 0px 50px auto;
+        }
 
         .container_column {
             display: flex;
@@ -284,17 +288,19 @@ background-color: aqua;
             height: 300px;
         }
 
-        .Card_box{
+        .Card_box {
             /* background-color: aqua; */
             padding: 20px 0px;
         }
-        .Card_box>a>img{
+
+        .Card_box>a>img {
             width: 150px;
             /* object-fit: contain; */
             margin-right: 15px;
             /* border: 2px solid red; */
         }
-        .Card_box>a>img:hover{
+
+        .Card_box>a>img:hover {
             filter: opacity(0.8);
             transition: all 0.5s;
         }
@@ -337,6 +343,51 @@ background-color: aqua;
             color: #f9f9f9;
             font-size: 20px;
 
+        }
+
+
+        /* 響應式 */
+
+        /* 螢幕大於1440px */
+        /* @media screen and (min-width:1440px) {} */
+
+        /* 螢幕1440px~1000px */
+        /* @media screen and (min-width:1000px) and (max-width:1440px) {} */
+
+        /* 螢幕1000px~700px */
+        @media screen and (min-width:700px) and (max-width:1000px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .box {
+                height: 200px;
+            }
+        }
+
+        /* 螢幕700px以下 */
+        @media screen and (max-width:700px) {
+            .index span{
+                font-size: 12px;
+            }
+            .container {
+                flex-direction: column;
+                margin: 0 auto;
+               
+            }
+            tr{
+                margin: 20px;
+            }
+         td{
+            font-size: 12px;
+         }
+            .box {
+                height: 200px;
+            }
+        }
+
+        .Card_box{
+            display: flex;
         }
     </style>
 
@@ -395,13 +446,14 @@ background-color: aqua;
                     <table id="cartTable">
                         <tr data-id="1">
                             <td><a href="./product_page.html">
-                                <img src="./img/ex.jpg" alt="" style="width: 150px;">
-                            </a></td>
+                                    <img src="./img/ex.jpg" alt="" style="width: 150px;">
+                                </a></td>
                             <td>Restored Ercol Table and Four Chairs</td>
                             <td class="prodPrice">3980</td>
                             <td>
                                 <div class="btn_bar">
-                                    <input type="number" name="" id="" value="1" min="0" class="num" onclick="getTotal()" oninput="checkQuantity(this)">
+                                    <input type="number" name="" id="" value="1" min="0" class="num"
+                                        onclick="getTotal()" oninput="checkQuantity(this)">
                                     <!-- <button class="countBtn" onclick="getTotal()">count</button> -->
                                     <button>Save for later</button>
                                     <button class="deleteBtn" onclick="deleteRow(this)">Remove</button>
@@ -410,13 +462,14 @@ background-color: aqua;
                         </tr>
                         <tr data-id="2">
                             <td><a href="">
-                                <img src="./img/18.jpg" alt="" style="width: 150px;" herf="#">
-                            </a></td>
+                                    <img src="./img/18.jpg" alt="" style="width: 150px;" herf="#">
+                                </a></td>
                             <td>Painted Mahogany Sideboard</td>
                             <td class="prodPrice">1580</td>
                             <td>
                                 <div class="btn_bar">
-                                    <input type="number" name="" class="num" min="0" value="1" onclick="getTotal()" oninput="checkQuantity(this)" >
+                                    <input type="number" name="" class="num" min="0" value="1" onclick="getTotal()"
+                                        oninput="checkQuantity(this)">
                                     <!-- <button class="countBtn" onclick="getTotal()">count</button> -->
                                     <button>Save for later</button>
                                     <button class="deleteBtn" onclick="deleteRow(this)">Remove</button>
@@ -442,10 +495,10 @@ background-color: aqua;
 
         </main>
         <!-- 最近瀏覽 -->
-        <main style="background-color: #f6f7f8; margin: 50px 50px 0px 50px auto;">
+        <main class="Recently">
             <div class="container_column">
                 <h2>Recently Viewed</h2>
-                <div class="Card_box" >
+                <div class="Card_box">
 
                     <a href=""><img src="./img/14.jpg" alt=""></a>
                     <a href=""><img src="./img/6.jpg" alt=""></a>
@@ -499,7 +552,7 @@ background-color: aqua;
                 // 檢查購物車是否為空
                 const noItemsMessage = document.getElementById("noItemsMessage");
                 const cartTable = document.getElementById("cartTable");
-                if (cartTable.rows.length <= 0) {  
+                if (cartTable.rows.length <= 0) {
 
                     // 包含表頭行，空購物車情況
                     noItemsMessage.style.display = "block";
@@ -517,15 +570,15 @@ background-color: aqua;
 
 
             function checkQuantity(input) {
-    if (input.value < 0) {
-        input.value = 0; // 防止負值
-    }
-    if (input.value == 0) {
-        const row = input.closest("tr");
-        row.remove();
-    }
-    getTotal();
-}
+                if (input.value < 0) {
+                    input.value = 0; // 防止負值
+                }
+                if (input.value == 0) {
+                    const row = input.closest("tr");
+                    row.remove();
+                }
+                getTotal();
+            }
         </script>
 
     </body>
