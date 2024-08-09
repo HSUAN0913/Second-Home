@@ -395,13 +395,14 @@
             text-align: left;
             outline: none;
             font-size: 15px;
+            font-weight: bold;
             transition: 0.4s;
         }
 
 
-        /* .accordion:hover {
+        .accordion:hover {
             background-color: #f0f0f0;
-        } */
+        }
 
         /* 加號減號 */
         .accordion:after {
@@ -434,7 +435,7 @@
             /* float: right; */
             display: flex;
             justify-content: left;
-            align-items: center;
+            align-items: stretch;
             /* border: 2px solid red; */
             flex-wrap: wrap;
             width: 600px;
@@ -476,7 +477,7 @@
             text-align: left;
             padding: 10px 0px;
             margin: 0;
-            font-size: 20px;
+            font-size: 15px;
         }
 
         .item_price {
@@ -530,7 +531,7 @@
         }
 
         .swiper {
-            
+
             width: 1200px;
             height: 100%;
         }
@@ -538,14 +539,14 @@
         .swiper-slide {
             text-align: start;
             font-size: 18px;
-            background: red;
+            /* background: red; */
             /* display: flex; */
             /* justify-content: center; */
             /* align-items:start; */
             /* flex-direction: column; */
-            
+
         }
-  
+
         @media (max-width: 760px) {
             .swiper-button-next {
                 right: 20px;
@@ -669,72 +670,56 @@
 
                 <h4>Item details</h4>
                 <div class="detail_box">
-                    <button class="accordion"> <i class="fas fa-thin fa-ruler"></i> Dimensions</button>
+                    <button class="accordion">
+                        <i class="fas fa-thin fa-ruler"></i>
+                        &nbsp;Dimensions
+                    </button>
                     <div class="panel">
                         <p>Product SKU: ERX006</p>
                     </div>
-                    <button class="accordion"><i class="fas fa-light fa-location-dot"></i> Viewing & Collection
-                        Location</button>
+                    <button class="accordion">
+                        <i class="fas fa-light fa-location-dot"></i>
+                        &nbsp;Viewing & Collection
+                        Location
+                    </button>
                     <div class="panel">
                         <p>Product SKU: ERX006</p>
                     </div>
-                    <button class="accordion"> <i class="fas fa-light fa-truck-fast"></i> Shipping Cost</button>
+                    <button class="accordion">
+                        <i class="fas fa-light fa-truck-fast"></i>
+                        &nbsp;Shipping Cost
+                    </button>
                     <div class="panel">
                         <p>FAST DELIVERY I work with FEDEX and it takes 3-4 business days for your order to be
                             delivered. I
                             will send you your tracking information after your order is shipped.</p>
                     </div>
                 </div>
-                <!-- <table>
-                    <tr>
-                        <td>Dimensions</td>
-                        <td>Product SKU: ERX006</td>
-                    </tr>
-                    <tr>
-                        <td>Item condition</td>
-                        <td>全新</td>
-                    </tr>
-                    <tr>
-                        <td>運費</td>
-                        <td>nt</td>
-                    </tr>
-                    <tr>
-                        <td>運送方法</td>
-                        <td>超商取貨</td>
-                    </tr>
-                    <tr>
-                        <td>Shipping Cost</td>
-                        <td>place</td>
-                    </tr>
-                    <tr>
-                    <td>到貨日期</td>
-                    <td>1~2天</td>
-                </tr>
-                </table> -->
+
                 <h4 style="border: none;">Recommend item</h4>
 
                 <div class="card_box">
                     <div class="card">
-                        <img src="https://dummyimage.com/200x200/d3d3d3/fff&text=product" alt="">
+                        <img src="./img/3.jpg" alt="" style="width: 200px;">
                         <div class="name_price">
-                            <h5 class="item_name">Chairs</h5>
-                            <p class="item_price">NT 2980</p>
+                            <h5 class="item_name">Hand Made Solid Oak Library Steps</h5>
+                            <p class="item_price">NT 1800</p>
 
                         </div>
                     </div>
                     <div class="card">
-                        <img src="https://dummyimage.com/200x200/d3d3d3/fff&text=product" alt="">
+                        <img src="./img/4.jpg" alt="" style="width: 200px;">
                         <div class="name_price">
-                            <h5 class="item_name">Chairs</h5>
-                            <p class="item_price">NT 2980</p>
+                            <h5 class="item_name">Restored Oak Bookcase</h5>
+                            <p class="item_price">NT 1980</p>
 
                         </div>
                     </div>
                     <div class="card">
-                        <img src="https://dummyimage.com/200x200/d3d3d3/fff&text=product" alt="">
+                        <img src="./img/7.jpg" alt="" style="width: 200px;">
                         <div class="name_price">
-                            <h5 class="item_name">Chairs</h5>
-                            <p class="item_price">NT 2980</p>
+                            <h5 class="item_name">Glazed Oak Bookcase</h5>
+                            <p class="item_price">NT 1580</p>
 
                         </div>
                     </div>
@@ -763,7 +748,7 @@
 
                 </div>
 
-                <h1>NT$ 2900</h1>
+                <h1>NT$ 3800</h1>
                 <div class="buy_btn">
                     <button>
                         1
@@ -811,52 +796,52 @@
             <div class="card_box_2 swiper-wrapper">
 
                 <div class="card swiper-slide">
-                    <img src="https://dummyimage.com/200x200/d3d3d3/fff&text=product" alt="">
+                    <img src="./img/9.jpg" alt="" style="width: 200px;">
                     <div class="name_price">
-                        <h5 class="item_name">Chairs</h5>
-                        <p class="item_price">NT 2980</p>
+                        <h5 class="item_name">Restored Oak Dresser</h5>
+                        <p class="item_price">NT 1700</p>
 
                     </div>
                 </div>
                 <div class="card swiper-slide">
-                    <img src="https://dummyimage.com/200x200/d3d3d3/fff&text=product" alt="">
+                    <img src="./img/11.jpg" alt="" style="width: 200px;">
                     <div class="name_price">
-                        <h5 class="item_name">Chairs</h5>
-                        <p class="item_price">NT 2980</p>
+                        <h5 class="item_name">Old Charm Media Cabinet</h5>
+                        <p class="item_price">NT 1300</p>
 
                     </div>
                 </div>
                 <div class="card swiper-slide">
-                    <img src="https://dummyimage.com/200x200/d3d3d3/fff&text=product" alt="">
+                    <img src="./img/13.jpg" alt="" style="width: 200px;">
                     <div class="name_price">
-                        <h5 class="item_name">Chairs</h5>
-                        <p class="item_price">NT 2980</p>
-
-                    </div>
-                </div>
-
-                <div class="card swiper-slide">
-                    <img src="https://dummyimage.com/200x200/d3d3d3/fff&text=product" alt="">
-                    <div class="name_price">
-                        <h5 class="item_name">Chairs</h5>
-                        <p class="item_price">NT 2980</p>
+                        <h5 class="item_name">Rustic Coffee Table</h5>
+                        <p class="item_price">NT 900</p>
 
                     </div>
                 </div>
 
                 <div class="card swiper-slide">
-                    <img src="https://dummyimage.com/200x200/d3d3d3/fff&text=product" alt="">
+                    <img src="./img/15.jpg" alt="" style="width: 200px;">
                     <div class="name_price">
-                        <h5 class="item_name">Chairs</h5>
-                        <p class="item_price">NT 2980</p>
+                        <h5 class="item_name">Restored Mahogany Cabinet</h5>
+                        <p class="item_price">NT 1180</p>
+
+                    </div>
+                </div>
+
+                <div class="card swiper-slide">
+                    <img src="./img/19.jpg" alt="" style="width: 200px;">
+                    <div class="name_price">
+                        <h5 class="item_name">Spanish Style Painted Sideboard</h5>
+                        <p class="item_price">NT 1700</p>
 
                     </div>
                 </div>
                 <div class="card swiper-slide">
-                    <img src="https://dummyimage.com/200x200/d3d3d3/fff&text=product" alt="">
+                    <img src="./img/20.jpg" alt="" style="width: 200px;">
                     <div class="name_price">
-                        <h5 class="item_name">Chairs</h5>
-                        <p class="item_price">NT 2980</p>
+                        <h5 class="item_name">Painted Oak Dresser</h5>
+                        <p class="item_price">NT 1700</p>
 
                     </div>
                 </div>
@@ -874,7 +859,7 @@
         <div class="footer_bar">
             <div>
                 <span class="logo">
-                    <a href="#" style="text-decoration: none; color: #f6f7f8;">
+                    <a href="./homepage.html" style="text-decoration: none; color: #f6f7f8;">
                         <img src="" alt="">Second Home.
                     </a>
                 </span>
