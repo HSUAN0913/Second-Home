@@ -360,6 +360,19 @@ input {
     .box {
         height: 200px;
     }
+
+    #noItemsMessage {
+        /* display: block; */
+        font-size: 2em;
+        margin: 80px;
+        /* text-align: center; */
+        /* justify-content: center; */
+        /* align-items: center; */
+        /* position: fixed;
+        right: 40%;
+        top: -5%; */
+        /* top: 0%; */
+    }
 }
 
 /* 螢幕700px以下 */
@@ -368,18 +381,24 @@ input {
         padding: 0 2em;
         width: 100%;
     }
-    .index{
+
+    .index {
         /* border: 2px solid red; */
         width: 100%;
-        margin: 0 ;
+        margin: 0;
         padding: 0;
-        
+
     }
 
     .index span {
         margin: 0;
         width: 100%;
         font-size: 0.2em;
+    }
+
+    #noItemsMessage {
+        font-size: 1.5em;
+        margin: 40px;
     }
 
     .container {
@@ -419,7 +438,7 @@ input {
         /* border: 2px solid red; */
         width: 100%;
         font-size: 0.5em;
-        margin:  1em;
+        margin: 1em;
         padding: 0;
         height: 100%;
         align-items: center;
@@ -479,7 +498,8 @@ input {
         height: 10em;
         font-size: 1em;
     }
-    .box>button{
+
+    .box>button {
         width: 100%;
         font-size: 1em;
     }
@@ -493,6 +513,6 @@ input {
 
         flex-direction: column-reverse;
         text-align: center;
-       
+
     }
 }
