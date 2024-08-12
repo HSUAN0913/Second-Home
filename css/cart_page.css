@@ -379,15 +379,15 @@ input {
     .index span {
         margin: 0;
         width: 100%;
-        
-        font-size: 12px;
+        font-size: 0.2em;
     }
 
     .container {
         flex-direction: column;
         width: 100%;
         margin: 0;
-        padding: 1.5em;
+        padding: 1em 1.5em;
+        font-size: 1em;
         /* border: 2px solid red; */
 
     }
@@ -408,10 +408,10 @@ input {
 
     tr {
         width: 100%;
-        height: 75%;
+        height: 100%;
         margin: 0em;
         padding: 0;
-        /* align-items: center; */
+        align-items: center;
     }
 
 
@@ -419,9 +419,9 @@ input {
         /* border: 2px solid red; */
         width: 100%;
         font-size: 0.5em;
-        margin: 1.2em;
+        margin:  1em;
         padding: 0;
-        height: 75%;
+        height: 100%;
         align-items: center;
 
 
@@ -476,7 +476,12 @@ input {
 
     .box {
         width: 100%;
-        height: 200px;
+        height: 10em;
+        font-size: 1em;
+    }
+    .box>button{
+        width: 100%;
+        font-size: 1em;
     }
 
     .Card_box {
