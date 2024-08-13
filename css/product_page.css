@@ -694,7 +694,7 @@ h4 {
     
     .img_for_rwd {
     
-        /* margin: 0 1em; */
+        margin: 0 1em;
         display: block;
         order: 1;
         /* width: 100%; */
@@ -702,9 +702,9 @@ h4 {
         
     }
 
-    /* .Slide>img {
+    .Slide>img {
         width: 100%;
-    } */
+    }
 
     .container {
         /* display: table-column; */
