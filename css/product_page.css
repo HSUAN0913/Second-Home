@@ -681,9 +681,9 @@ h4 {
        padding: 0 2em; 
     }
 
-    .icon_bar a:nth-child(-n+1) {
+    /* .icon_bar a:nth-child(-n+0) {
         display: none;
-    }
+    } */
 
     .single-search,
     .index,
@@ -697,14 +697,14 @@ h4 {
         /* margin: 0 1em; */
         display: block;
         order: 1;
-        width: 100%;
+        /* width: 100%; */
+        /* width:100vw ; */
+        
     }
 
-    .Slide>img {
-        /* width: 400px; */
+    /* .Slide>img {
         width: 100%;
-        /* margin: 0 2em; */
-    }
+    } */
 
     .container {
         /* display: table-column; */
@@ -758,7 +758,6 @@ h4 {
         position: static;
         /* width: 400px; */
         padding: 2em 2em;
-
     }
 
     h2 {

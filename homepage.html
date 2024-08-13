@@ -11,7 +11,7 @@
         rel="stylesheet">
 
     <script src="https://kit.fontawesome.com/5b778b23e2.js" crossorigin="anonymous"></script>
-    
+
     <link rel="stylesheet" href="./css/homepage.css">
     <!-- <script type="module" src="./js/homepage.js"></script> -->
 
@@ -54,12 +54,24 @@
                     <i class="fas fa-sharp fa-solid fa-heart"></i>
                 </a>
 
-                <a href="#" class="bar_icon">
+                <a href="#" class="bar_icon" onclick="openNav()">
                     <i class="fas fa-sharp fa-solid fa-bars"></i>
                 </a>
             </span>
         </nav>
     </header>
+
+
+    <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Clients</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+
 
     <section class="notion" id="navbar">
         <nav class="select">
@@ -477,7 +489,10 @@
         <div class="hero-text">
             <h2>Subscribe</h2>
             <p>Sign up to receive email updates about new furniture and offers...</p>
-            <button>Book Now</button>
+            <form class="sub">
+                <input type="email" placeholder="Email Address">
+                <button type="submit"><i class="fas fa-regular fa-envelope"></i></button>
+            </form>
         </div>
     </div>
 
@@ -530,6 +545,15 @@
         //     document.body.scrollTop = 0; // For Safari
         //     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
         // }
+        // MENU視窗
+
+        function openNav() {
+            document.getElementById("myNav").style.height = "100%";
+        }
+
+        function closeNav() {
+            document.getElementById("myNav").style.height = "0%";
+        }
 
 
         // 標題上捲消失
@@ -565,7 +589,7 @@
             slides[slideIndex - 1].style.display = "block";
             slides[slideIndex - 1].className += " fade-in";
             dots[slideIndex - 1].className += " active";
-            autoSlide = setTimeout(() => plusSlides(1), 10000); // 每5秒切換一次幻燈片
+            autoSlide = setTimeout(() => plusSlides(1), 15000); // 每5秒切換一次幻燈片
         }
 
         // 初始化並顯示第一張幻燈片
