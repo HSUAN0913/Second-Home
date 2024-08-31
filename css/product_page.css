@@ -694,6 +694,7 @@ h4 {
     
     .img_for_rwd {
     
+        width: 100%;
         margin: 0 1em;
         display: block;
         order: 1;
