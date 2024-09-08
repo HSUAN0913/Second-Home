@@ -22,10 +22,6 @@ p {
   margin: 10px 100px;
 }
 
-#navbar {
-  transition: top 0.5s;
-}
-
 header {
   position: fixed;
   height: 80px;
@@ -168,6 +164,10 @@ header {
     right: 35px;
   }
 }
+#navbar {
+  transition: top 0.5s;
+}
+
 .notion {
   position: fixed;
   top: 80px;
